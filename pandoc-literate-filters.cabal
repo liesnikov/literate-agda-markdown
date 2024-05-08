@@ -68,7 +68,9 @@ executable pandoc-literate-filters
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.18
+    build-depends:    base >=4.17
+                    , text
+                    , pandoc-types
 
     -- Directories containing source files.
     hs-source-dirs:   app
