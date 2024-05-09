@@ -3,6 +3,7 @@
 A very simple [pandoc filter](https://pandoc.org/filters.html) to tranlate literate Agda markdown files to literate Agda TeX files.
 
 This enables the pipeline: literate markdown -> literate tex -> pdf with highighting.
+Which might be possible to do somehow with pure Agda but I couldn't find it immediately.
 
 ## Syntax example
 
