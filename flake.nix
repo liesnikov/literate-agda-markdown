@@ -11,6 +11,7 @@
         filters = pkgs.haskellPackages.callCabal2nix "pandoc-literate-filters" ./. {};
       in {
         packages = {
+          inherit filters;
           default = filters;
         };
         devShells.default = pkgs.haskellPackages.shellFor {

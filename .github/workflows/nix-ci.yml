@@ -1,0 +1,20 @@
+name: "CI"
+on:
+  pull_request:
+  push:
+jobs:
+  nix-build:
+    name: ${{ matrix.pretty }} with nix (${{ matrix.derivation }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        derivation: [filters]
+        include:
+          - pretty: "Build Haskell executable"
+            derivation: filters
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v22
+    - uses: DeterminateSystems/magic-nix-cache-action@v2
+    - run: nix build .#${{ matrix.derivation }} --print-build-logs
